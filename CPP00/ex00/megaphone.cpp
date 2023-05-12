@@ -1,20 +1,10 @@
 #include <iostream>
-
-void	to_upper(char *str)
-{
-	int	i = 0;
-
-	while (str[i])
-	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] -= 32;
-		i++;
-	}
-}
+#include <cctype>
 
 int	main(int argc, char **argv)
 {
 	int	i = 0;
+	int	x;
 
 	if (argc == 1)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
@@ -22,7 +12,9 @@ int	main(int argc, char **argv)
 	{
 		while (argv[++i])
 		{
-			to_upper(argv[i]);
+			x = -1;
+			while (argv[i][++x])
+				argv[i][x] = toupper(argv[i][x]);
 			std::cout << argv[i];
 		}
 		std::cout << std::endl;
