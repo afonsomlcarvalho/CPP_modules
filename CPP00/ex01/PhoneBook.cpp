@@ -19,18 +19,44 @@ int	move_left(Contact *array)
 
 void PhoneBook::Add()
 {
+	std::string	input;
 	if (i == 8)
 		i = move_left(List);
 	std::cout << "First Name: ";
-	std::getline(std::cin, List[i].FirstName);
+	getline(std::cin, input);
+	while (!List[i].set_FirstName(input))
+	{
+		std::cout << "First Name: ";
+		getline(std::cin, input);
+	}
 	std::cout << "Last Name: ";
-	std::getline(std::cin, List[i].LastName);
+	getline(std::cin, input);
+	while (!List[i].set_LastName(input))
+	{
+		std::cout << "Last Name: ";
+		getline(std::cin, input);
+	}
 	std::cout << "Nickname: ";
-	std::getline(std::cin, List[i].Nickname);
+	getline(std::cin, input);
+	while (!List[i].set_Nickname(input))
+	{
+		std::cout << "Nickname: ";
+		getline(std::cin, input);
+	}
 	std::cout << "Phone Number: ";
-	std::getline(std::cin, List[i].PhoneNumber);
+	getline(std::cin, input);
+	while (!List[i].set_PhoneNumber(input))
+	{
+		std::cout << "Phone Number: ";
+		getline(std::cin, input);
+	}
 	std::cout << "Darkest Secret: ";
-	std::getline(std::cin, List[i].DarkestSecret);
+	getline(std::cin, input);
+	while (!List[i].set_DarkestSecret(input))
+	{
+		std::cout << "Darkest Secret: ";
+		getline(std::cin, input);
+	}
 	i++;
 }
 
@@ -79,16 +105,16 @@ void PhoneBook::Search()
 	while (x < i)
 	{
 		std::cout << "|         " << x + 1 << "|";
-		display_string(List[x].FirstName);
-		display_string(List[x].LastName);
-		display_string(List[x].Nickname);
+		display_string(List[x].get_FirstName());
+		display_string(List[x].get_LastName());
+		display_string(List[x].get_Nickname());
 		std::cout << std::endl << "---------------------------------------------" << std::endl;
 		x++;
 	}
 	x = index_treatment(i);
-	std::cout << "First Name: " << List[x].FirstName << std::endl;
-	std::cout << "Last Name: " << List[x].LastName << std::endl;
-	std::cout << "Nickname: " << List[x].Nickname << std::endl;
-	std::cout << "Phone Number: " << List[x].PhoneNumber << std::endl;
-	std::cout << "Darkest Secret: " << List[x].DarkestSecret << std::endl; 
+	std::cout << "First Name: " << List[x].get_FirstName() << std::endl;
+	std::cout << "Last Name: " << List[x].get_LastName() << std::endl;
+	std::cout << "Nickname: " << List[x].get_Nickname() << std::endl;
+	std::cout << "Phone Number: " << List[x].get_PhoneNumber() << std::endl;
+	std::cout << "Darkest Secret: " << List[x].get_DarkestSecret() << std::endl; 
 }
