@@ -13,8 +13,14 @@ int	main(int argc, char **argv)
 	{
 		while (argv[++i])
 		{
+			x = 0;
 			current = argv[i];
-			std::cout << argv[i];
+			while (x < current.length())
+			{
+				current.at(x) = toupper(current.at(x));
+				x++;
+			}
+			std::cout << current;
 		}
 		std::cout << std::endl;
 	}

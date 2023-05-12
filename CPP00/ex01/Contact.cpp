@@ -37,7 +37,13 @@ int	Contact::set_PhoneNumber(std::string number)
 	int	i = 0;
 	if (number.empty())
 		return (0);
-	LastName = number;
+	while (i < number.length())
+	{
+		if (!(number.at(i) >= '0' && number.at(i) <= '9'))
+			return (0);
+		i++;
+	}
+	PhoneNumber = number;
 	return (1);
 }
 
