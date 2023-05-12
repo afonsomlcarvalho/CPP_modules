@@ -10,14 +10,14 @@ int	main()
 	while (1)
 	{
 		std::cout << "Enter a command: ";
-		std::cin >> command;
+		std::getline(std::cin, command);
 		if (!command.compare("SEARCH"))
 			lista.Search();
 		else if (!command.compare("ADD"))
 			lista.Add();
 		else if (!command.compare("EXIT"))
 			break ;
-		else
+		else if (!command.empty())
 			std::cout << "Invalid command" << std::endl;
 	}
 }

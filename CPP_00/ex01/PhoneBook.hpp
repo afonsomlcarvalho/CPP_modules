@@ -34,15 +34,15 @@ void PhoneBook::Add()
 	if (i == 8)
 		i = move_left(List);
 	std::cout << "First Name: ";
-	std::cin >> List[i].FirstName;
+	std::getline(std::cin, List[i].FirstName);
 	std::cout << "Last Name: ";
-	std::cin >> List[i].LastName;
+	std::getline(std::cin, List[i].LastName);
 	std::cout << "Nickname: ";
-	std::cin >> List[i].Nickname;
+	std::getline(std::cin, List[i].Nickname);
 	std::cout << "Phone Number: ";
-	std::cin >> List[i].PhoneNumber;
+	std::getline(std::cin, List[i].PhoneNumber);
 	std::cout << "Darkest Secret: ";
-	std::cin >> List[i].DarkestSecret;
+	std::getline(std::cin, List[i].DarkestSecret);
 	i++;
 }
 
@@ -67,11 +67,11 @@ int	index_treatment(int i)
 	std::string index;
 
 	std::cout << "Choose an index: ";
-	std::cin >> index;
-	if (index.length() > 1 || index.at(0) - '0' - 1 > 7 || index.at(0) == '0')
+	std::getline(std::cin, index);
+	if (index.empty() || index.length() > 1 || index.at(0) - '0' - 1 >= i || index.at(0) == '0')
 	{
 		std::cout << "Index must be a number between 1 and " << i << std::endl;
-		index_treatment(i);
+		return (index_treatment(i));
 	}
 	return (index.at(0) - '0' - 1);
 }
@@ -80,7 +80,11 @@ void PhoneBook::Search()
 {
 	int	x = 0;
 
-
+	if (i == 0)
+	{
+		std::cout << "There is no contact to be shown" << std::endl;
+		return ;
+	}
 	std::cout << "---------------------------------------------" << std::endl;
 	std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
@@ -94,6 +98,7 @@ void PhoneBook::Search()
 		x++;
 	}
 	x = index_treatment(i);
+	std::cout << x << std::endl;
 	std::cout << "First Name: " << List[x].FirstName << std::endl;
 	std::cout << "Last Name: " << List[x].LastName << std::endl;
 	std::cout << "Nickname: " << List[x].Nickname << std::endl;
