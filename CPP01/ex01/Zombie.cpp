@@ -18,3 +18,8 @@ Zombie::~Zombie()
 {
 	std::cout << name + " destructed" << std::endl;
 }
+
+void	Zombie::setName(std::string name_to_give)
+{
+	name = name_to_give;
+}
