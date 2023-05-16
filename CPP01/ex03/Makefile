@@ -7,7 +7,11 @@ SRCS =	main.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+
 all: $(NAME)
+
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 $(NAME): $(OBJS) $(OBJSLIB) $(OBJSPR)
 	@c++ -Wall -Werror -Wextra -std=c++98 $(OBJS) -o $(NAME)

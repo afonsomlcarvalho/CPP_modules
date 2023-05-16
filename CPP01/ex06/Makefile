@@ -1,6 +1,7 @@
-NAME = megaphone
+NAME = harlFilter
 
-SRCS =	megaphone.cpp
+SRCS =	Harl.cpp \
+		main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

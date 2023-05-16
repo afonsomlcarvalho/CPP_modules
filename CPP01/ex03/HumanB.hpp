@@ -11,7 +11,7 @@ public:
 	HumanB(std::string name_to_give);
 	~HumanB();
 	void	attack();
-	void	setWeapon(Weapon club);
+	void	setWeapon(Weapon *club);
 };
 
 #endif

@@ -14,7 +14,3 @@ Weapon::Weapon(std::string type_to_give)
 {
 	type = type_to_give;
 }
-
-Weapon::Weapon()
-{
-}

@@ -3,8 +3,7 @@
 
 void	line_treatment(std::string *line, std::string s1, std::string s2)
 {
-	int	i = 0;
-	int	j;
+	size_t	i = 0;
 	std::string	sub;
 
 	while (i < line->length())
@@ -36,7 +35,7 @@ int	main(int argc, char **argv)
 	filename = argv[1];
 	filename.append(".replace");
 	file.open(argv[1], std::ios::in);
-	new_file.open(filename, std::ios::out);
+	new_file.open(filename.c_str(), std::ios::out);
 	while (getline(file, line))
 	{
 		line_treatment(&line, (std::string)argv[2], (std::string)argv[3]);

@@ -8,6 +8,8 @@ OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+
 $(NAME): $(OBJS) $(OBJSLIB) $(OBJSPR)
 	@c++ -Wall -Werror -Wextra -std=c++98 $(OBJS) -o $(NAME)
 

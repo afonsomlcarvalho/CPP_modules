@@ -26,10 +26,6 @@ Harl::Harl()
 	levels[1] = "INFO";
 	levels[2] = "WARNING";
 	levels[3] = "ERROR";
-	f[0] = &Harl::debug;
-	f[1] = &Harl::info;
-	f[2] = &Harl::warning;
-	f[3] = &Harl::error;
 }
 
 void	Harl::complain(std::string level)
@@ -38,10 +34,26 @@ void	Harl::complain(std::string level)
 
 	while (i < 4 && levels[i].compare(level))
 		i++;
-	if (i == 4)
+	while (i < 5)
 	{
-		std::cout << "Invalid level" << std::endl;
-		return ;
+		switch (i)
+		{
+		case 0:
+			debug();
+			break;
+		case 1:
+			info();
+			break;
+		case 2:
+			warning();
+			break;
+		case 3:
+			error();
+			return ;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		}
+		i++;
 	}
-	(this->*f[i])();
 }
+
