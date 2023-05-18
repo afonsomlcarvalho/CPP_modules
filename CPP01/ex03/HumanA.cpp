@@ -7,5 +7,8 @@ HumanA::HumanA(std::string name_to_give, Weapon &club): wpn(club)
 
 void	HumanA::attack()
 {
-	std::cout << name + " attacks with their " + wpn.getType() << std::endl;
+	if (wpn.getType().empty())
+		std::cout << name + " has no weapon to attack with" << std::endl;
+	else
+		std::cout << name + " attacks with their " + wpn.getType() << std::endl;
 }

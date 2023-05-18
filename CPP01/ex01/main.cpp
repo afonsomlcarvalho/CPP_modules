@@ -1,4 +1,4 @@
-#include "Zombie.h"
+#include "Zombie.hpp"
 
 int	main()
 {
@@ -9,6 +9,5 @@ int	main()
 	Horde = zombieHorde(N, "Jasmim");
 	while (i < N)
 		Horde[i++].announce();
-	i = 0;
 	delete[] Horde;
 }
