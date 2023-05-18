@@ -56,6 +56,7 @@ int	main(int argc, char **argv)
 		whole = whole + line + "\n";
 	if (!((std::string)argv[2]).empty())
 		line_treatment(&whole, (std::string)argv[2], (std::string)argv[3]);
+	whole = whole.substr(0, whole.length() - 1);
 	new_file << whole;
 	file.close();
 	new_file.close();
