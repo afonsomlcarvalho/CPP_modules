@@ -3,9 +3,11 @@ NAME = fixed
 SRCS =	main.cpp \
 		Fixed.cpp
 
-OBJS = $(SRCS:.cpp=.o)
+CXX = c++
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+
+OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
