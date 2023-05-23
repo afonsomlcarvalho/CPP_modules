@@ -61,34 +61,34 @@ std::ostream	&operator<<(std::ostream &out, const Fixed &n)
 	return (out);
 }
 
-bool	operator>(const Fixed &a, const Fixed &b)
+bool	Fixed::operator>(const Fixed &b) const
 {
-	return (a.getRawBits() > b.getRawBits());
+	return (number_value > b.getRawBits());
 }
 
-bool	operator<(const Fixed &a, const Fixed &b)
+bool	Fixed::operator>=(const Fixed &b) const
 {
-	return (b > a);
+	return (number_value >= b.getRawBits());
 }
 
-bool	operator>=(const Fixed &a, const Fixed &b)
+bool	Fixed::operator<(const Fixed &b) const
 {
-	return (!(a < b));
+	return (number_value < b.getRawBits());
 }
 
-bool	operator<=(const Fixed &a, const Fixed &b)
+bool	Fixed::operator<=(const Fixed &b) const
 {
-	return (!(a > b));
+	return (number_value <= b.getRawBits());
 }
 
-bool	operator==(const Fixed &a, const Fixed &b)
+bool	Fixed::operator==(const Fixed &b) const
 {
-	return (a.getRawBits() == b.getRawBits());
+	return (number_value == b.getRawBits());
 }
 
-bool	operator!=(const Fixed &a, const Fixed &b)
+bool	Fixed::operator!=(const Fixed &b) const
 {
-	return (!(a == b));
+	return (number_value != b.getRawBits());
 }
 
 Fixed &Fixed::operator++()
@@ -117,28 +117,24 @@ Fixed Fixed::operator--(int)
 	return (temp);
 }
 
-Fixed 	operator+(Fixed a, const Fixed &b)
+Fixed 	Fixed::operator+(const Fixed &b) const
 {
-	a.setRawBits(a.getRawBits() + b.getRawBits());
-	return (a);
+	return (Fixed(this->toFloat() + b.toFloat()));
 }
 
-Fixed 	operator-(Fixed a, const Fixed &b)
+Fixed 	Fixed::operator-(const Fixed &b) const
 {
-	a.setRawBits(a.getRawBits() - b.getRawBits());
-	return (a);
+	return (Fixed(this->toFloat() - b.toFloat()));
 }
 
-Fixed 	operator*(Fixed a, const Fixed &b)
+Fixed 	Fixed::operator*(const Fixed &b) const
 {
-	a.setRawBits((a.toFloat() * b.toFloat()) * (1 << a.getFractional()));
-	return (a);
+	return (Fixed(this->toFloat() * b.toFloat()));
 }
 
-Fixed 	operator/(Fixed a, const Fixed &b)
+Fixed 	Fixed::operator/(const Fixed &b) const
 {
-	a.setRawBits((a.toFloat() / b.toFloat()) * (1 << a.getFractional()));
-	return (a);
+	return (Fixed(this->toFloat() / b.toFloat()));
 }
 
 Fixed &Fixed::min(Fixed &a, Fixed &b)

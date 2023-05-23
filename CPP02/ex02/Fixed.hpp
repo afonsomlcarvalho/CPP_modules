@@ -30,18 +30,18 @@ public:
 	static Fixed &max(Fixed &a, Fixed &b);
 	static const Fixed &min(const Fixed &a, const Fixed &b);
 	static const Fixed &max(const Fixed &a, const Fixed &b);
+	bool	operator>(const Fixed &b) const;
+	bool	operator<(const Fixed &b) const;
+	bool	operator>=(const Fixed &b) const;
+	bool	operator<=(const Fixed &b) const;
+	bool	operator==(const Fixed &b) const;
+	bool	operator!=(const Fixed &b) const;
+	Fixed 	operator+(const Fixed &b) const;
+	Fixed 	operator-(const Fixed &b) const;
+	Fixed 	operator*(const Fixed &b) const;
+	Fixed 	operator/(const Fixed &b) const;
 };
 
-bool	operator>(const Fixed &a, const Fixed &b);
-bool	operator<(const Fixed &a, const Fixed &b);
-bool	operator>=(const Fixed &a, const Fixed &b);
-bool	operator<=(const Fixed &a, const Fixed &b);
-bool	operator==(const Fixed &a, const Fixed &b);
-bool	operator!=(const Fixed &a, const Fixed &b);
-Fixed 	operator+(Fixed a, const Fixed &b);
-Fixed 	operator-(Fixed a, const Fixed &b);
-Fixed 	operator*(Fixed a, const Fixed &b);
-Fixed 	operator/(Fixed a, const Fixed &b);
 
 std::ostream	&operator<<(std::ostream &out, const Fixed &n);
 

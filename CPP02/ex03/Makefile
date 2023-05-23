@@ -2,7 +2,8 @@ NAME = fixed
 
 SRCS =	main.cpp \
 		Fixed.cpp \
-		Point.cpp
+		Point.cpp \
+		bsp.cpp
 
 CXX = c++
 

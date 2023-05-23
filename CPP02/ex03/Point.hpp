@@ -14,8 +14,9 @@ public:
 	Point(const float x_to_set, const float y_to_set);
 	~Point();
 	const Point &operator=(const Point &p);
-	const Fixed &get_number(char c);
+	const Fixed &get_number(char c) const;
 };
 
-Fixed 	operator-(Fixed a, Fixed b);
+Point 	operator-(Point a, Point b);
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 #endif
