@@ -2,18 +2,18 @@
 
 DiamondTrap::DiamondTrap(std::string name_to_give): ClapTrap(name_to_give + "_clap_name"), ScavTrap(), FragTrap(), name(name_to_give)
 {
+	hit_pts = 100;
 	energy_pts = ScavTrap::energy_pts;
-	hit_pts = FragTrap::hit_pts;
-	att_damage = FragTrap::att_damage;
+	att_damage = 30;
 	ClapTrap::name = name_to_give + "_clap_name";
 	std::cout << "DiamondTrap " + name + " created" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(): ClapTrap("with no name_clap_name"), ScavTrap(), FragTrap(), name("with no name")
 {
-	FragTrap::hit_pts = 100;
+	hit_pts = 100;
 	energy_pts = ScavTrap::energy_pts;
-	FragTrap::att_damage = 30;
+	att_damage = 30;
 	ClapTrap::name = "with no name_clap_name";
 	std::cout << "DiamondTrap " + name + " created" << std::endl;
 }
