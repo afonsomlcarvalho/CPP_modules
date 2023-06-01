@@ -1,8 +1,8 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string name_to_give): ClapTrap(name_to_give + "_clap_name"), ScavTrap(name_to_give), FragTrap(name_to_give), name(name_to_give)
+DiamondTrap::DiamondTrap(std::string name_to_give): ClapTrap(name_to_give + "_clap_name"), ScavTrap(), FragTrap(), name(name_to_give)
 {
-	energy_pts = 50;
+	energy_pts = ScavTrap::energy_pts;
 	hit_pts = FragTrap::hit_pts;
 	att_damage = FragTrap::att_damage;
 	ClapTrap::name = name_to_give + "_clap_name";
