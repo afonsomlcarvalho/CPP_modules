@@ -23,6 +23,11 @@ FragTrap::~FragTrap()
 	std::cout << "FragTrap " + name + " destructed" << std::endl;
 }
 
+FragTrap::FragTrap(const FragTrap &copia)
+{
+	*this = copia;
+}
+
 FragTrap &FragTrap::operator=(const FragTrap &copia)
 {
 	name = copia.getName();
@@ -31,11 +36,6 @@ FragTrap &FragTrap::operator=(const FragTrap &copia)
 	att_damage = copia.getAttdamage();
 	std::cout << "FragTrap " + name + " copied" << std::endl;
 	return (*this);
-}
-
-FragTrap::FragTrap(const FragTrap &copia)
-{
-	*this = copia;
 }
 
 void	FragTrap::highFivesGuys()

@@ -28,11 +28,6 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &clap)
 	return (*this);
 }
 
-ClapTrap::ClapTrap(const ClapTrap &copia)
-{
-	*this = copia;
-}
-
 void	ClapTrap::attack(const std::string &target)
 {
 	std::cout << "Claptrap " + name;

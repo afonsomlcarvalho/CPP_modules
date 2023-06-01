@@ -3,7 +3,6 @@
 int	main()
 {
 	ClapTrap Miguel("Miguel");
-	ClapTrap Leandro = Miguel;
 
 	Miguel.attack("Paulo");
 	// Miguel.attack("Paulo");
@@ -16,7 +15,6 @@ int	main()
 	// Miguel.attack("Paulo");
 	// Miguel.attack("Paulo");
 	// Miguel.attack("Paulo");
-	Miguel.takeDamage(15);
 	Miguel.beRepaired(20);
-	std::cout << Leandro.getHitpts() << std::endl;
+	Miguel.takeDamage(15);
 }

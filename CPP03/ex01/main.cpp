@@ -3,7 +3,6 @@
 int	main()
 {
 	ScavTrap	Miguel("Miguel");
+	Miguel.guardGate();
 	Miguel.attack("Paulo");
-	std::cout << Miguel.getEnergypts() << std::endl;
-	
 }

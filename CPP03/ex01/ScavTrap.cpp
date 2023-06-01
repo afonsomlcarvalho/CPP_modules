@@ -20,7 +20,7 @@ ScavTrap::ScavTrap(std::string name_to_give)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap " + name + " destructed" << std::endl;
+	std::cout << "ScavTrap " + name + " destructed with " << hit_pts << " hit points left and " << energy_pts << " energy points left" << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &copia)
@@ -31,6 +31,11 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &copia)
 	att_damage = copia.getAttdamage();
 	std::cout << "ScavTrap " + name + " copied" << std::endl;
 	return (*this);
+}
+
+ScavTrap::ScavTrap(const ScavTrap &copia)
+{
+	*this = copia;
 }
 
 void	ScavTrap::attack(const std::string &target)

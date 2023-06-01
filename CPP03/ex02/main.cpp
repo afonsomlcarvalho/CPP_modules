@@ -1,9 +1,7 @@
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int	main()
 {
-	ScavTrap	Miguel("Miguel");
-	Miguel.attack("Paulo");
-	std::cout << Miguel.getEnergypts() << std::endl;
-	
+	FragTrap	Miguel("Miguel");
+	Miguel.highFivesGuys();
 }
