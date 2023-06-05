@@ -57,7 +57,7 @@ void Character::unequip(int idx)
 	slots[idx] = NULL;
 }
 
-void Character::use(int idx, Character& target)
+void Character::use(int idx, ICharacter& target)
 {
 	if (slots[idx])
 		slots[idx]->use(target);
