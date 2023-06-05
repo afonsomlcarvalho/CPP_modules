@@ -15,7 +15,7 @@ Dog &Dog::operator=(const Dog &copia)
 	return (*this);
 }
 
-Dog::Dog(const Dog &copia): Animal()
+Dog::Dog(const Dog &copia): AAnimal()
 {
 	*this = copia;
 }

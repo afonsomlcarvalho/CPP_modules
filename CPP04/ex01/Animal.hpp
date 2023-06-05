@@ -2,11 +2,13 @@
 # define ANIMAL_HPP
 
 # include <iostream>
+# include "Brain.hpp"
 
 class Animal
 {
 protected:
 	std::string	type;
+	Brain *brain;
 
 public:
 	Animal();

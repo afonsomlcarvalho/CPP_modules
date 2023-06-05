@@ -15,7 +15,7 @@ Cat &Cat::operator=(const Cat &copia)
 	return (*this);
 }
 
-Cat::Cat(const Cat &copia) : Animal()
+Cat::Cat(const Cat &copia) : AAnimal()
 {
 	*this = copia;
 }
