@@ -2,10 +2,13 @@
 
 AMateria::AMateria() {}
 
+AMateria::~AMateria() {}
+
 AMateria::AMateria(std::string const & type_to_give) : type(type_to_give) {}
 
 AMateria &AMateria::operator=(const AMateria &copia)
 {
+	(void) copia;
 	return (*this);
 }
 

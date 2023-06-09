@@ -10,7 +10,7 @@ Ice &Ice::operator=(const Ice &copia)
 	return (*this);
 }
 
-Ice::Ice(const Ice &copia)
+Ice::Ice(const Ice &copia) : AMateria("ice")
 {
 	*this = copia;
 }

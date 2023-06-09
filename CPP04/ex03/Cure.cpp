@@ -10,7 +10,7 @@ Cure &Cure::operator=(const Cure &copia)
 	return (*this);
 }
 
-Cure::Cure(const Cure &copia)
+Cure::Cure(const Cure &copia) : AMateria("cuse")
 {
 	*this = copia;
 }
