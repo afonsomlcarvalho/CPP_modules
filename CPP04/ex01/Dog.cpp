@@ -10,13 +10,14 @@ Dog::Dog()
 Dog &Dog::operator=(const Dog &copia)
 {
 	type = copia.type;
-	std::cout << "Dog copied";
-	*brain = *copia.brain;
+	std::cout << "Dog copied" << std::endl;;
+	*(brain) = *(copia.brain);
 	return (*this);
 }
 
 Dog::Dog(const Dog &copia): Animal()
 {
+	brain = new Brain;
 	*this = copia;
 }
 

@@ -5,6 +5,8 @@
 
 class Cat : public Animal
 {
+	Brain *brain;
+
 public:
 	Cat();
 	Cat(const Cat &copia);

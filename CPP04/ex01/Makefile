@@ -10,12 +10,12 @@ OBJS = $(SRCS:.cpp=.o)
 
 CXX = c++
 
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+CXXFLAGS = -Wall -Werror -Wextra -fsanitize=address -std=c++98 -g
 
 all: $(NAME)
 
 $(NAME): $(OBJS) $(OBJSLIB) $(OBJSPR)
-	@c++ -Wall -Werror -Wextra -std=c++98 $(OBJS) -o $(NAME)
+	@c++ -Wall -Werror -Wextra -fsanitize=address -std=c++98 $(OBJS) -o $(NAME)
 
 clean:
 	@rm -f $(OBJS)
