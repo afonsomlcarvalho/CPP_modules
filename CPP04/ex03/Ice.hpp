@@ -12,6 +12,7 @@ public:
 	Ice &operator=(const Ice &copia);
 	AMateria* clone() const;
 	void use(ICharacter& target);
+	void setEquiped(int i);
 };
 
 #endif

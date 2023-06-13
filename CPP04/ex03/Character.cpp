@@ -48,12 +48,15 @@ void Character::equip(AMateria* m)
 	while (i < 4 && slots[i])
 		i++;
 	if (i < 4)
+	{
 		slots[i] = m;
+		m->setEquiped(1);
+	}
 }
 
 void Character::unequip(int idx)
 {
-	// ADICIONAR MATERIA A LISTA PARA FREE NO FIM
+	slots[idx]->setEquiped(0);
 	slots[idx] = NULL;
 }
 

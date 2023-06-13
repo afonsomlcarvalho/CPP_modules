@@ -40,7 +40,7 @@ void MateriaSource::learnMateria(AMateria* to_learn)
 		i++;
 	if (i < 4)
 		knowledge[i] = to_learn->clone();
-	delete to_learn;
+	knowledge[i]->setEquiped(1);
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)

@@ -7,6 +7,7 @@ Ice::~Ice() {}
 Ice &Ice::operator=(const Ice &copia)
 {
 	type = copia.type;
+	equiped = copia.equiped;
 	return (*this);
 }
 

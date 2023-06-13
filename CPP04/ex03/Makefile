@@ -5,7 +5,8 @@ SRCS =	main.cpp \
 		Character.cpp \
 		Cure.cpp \
 		Ice.cpp \
-		MateriaSource.cpp
+		MateriaSource.cpp \
+		List.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

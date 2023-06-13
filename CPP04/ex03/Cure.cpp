@@ -7,10 +7,11 @@ Cure::~Cure() {}
 Cure &Cure::operator=(const Cure &copia)
 {
 	type = copia.type;
+	equiped = copia.equiped;
 	return (*this);
 }
 
-Cure::Cure(const Cure &copia) : AMateria("cuse")
+Cure::Cure(const Cure &copia) : AMateria("cure")
 {
 	*this = copia;
 }

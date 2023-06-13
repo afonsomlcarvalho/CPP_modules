@@ -3,8 +3,11 @@
 #include "MateriaSource.hpp"
 #include "Character.hpp"
 
+list *lista;
+
 int main()
 {
+	lista = createList();
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
@@ -17,6 +20,7 @@ int main()
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
+	clear_materia();
 	delete bob;
 	delete me;
 	delete src;
