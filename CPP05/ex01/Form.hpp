@@ -3,6 +3,8 @@
 
 # include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form
 {
 	const std::string name;
@@ -18,9 +20,13 @@ public:
 	Form &operator=(const Form &copia);
 	std::string getName() const;
 	bool getSigned() const;
-	const int getGradeToSign() const;
-	const int getGradeToExecute() const;
+	int getGradeToSign() const;
+	int getGradeToExecute() const;
 	void	beSigned(const Bureaucrat &Bur);
+	struct	GradeTooHighException;
+	struct	GradeTooLowException;
 };
+
+std::ostream	&operator<<(std::ostream &out, const Form &n);
 
 #endif

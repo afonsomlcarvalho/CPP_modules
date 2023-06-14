@@ -2,14 +2,10 @@
 
 int main()
 {
-	try
-	{
-		Bureaucrat Pauleta("Mario", 1);
-		Pauleta.increment();
-		std::cout << Pauleta << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	Bureaucrat	Paulo("Pauleta", 5);
+	Form		Form1("Form1", 10, 98);
+	Form		Form2("Form2", 1, 10);
+
+	Paulo.signForm(Form1);
+	Paulo.signForm(Form2);
 }

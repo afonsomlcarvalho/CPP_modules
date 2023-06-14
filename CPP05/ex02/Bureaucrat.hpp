@@ -2,12 +2,12 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
-# include "Form.hpp"
+# include "AForm.hpp"
 
 #define DEFAULT_GRADE 75
 #define DEFAULT_NAME "Jasmim"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -24,7 +24,8 @@ public:
 	int	getGrade() const;
 	void	increment();
 	void	decrecement();
-	void	signForm(Form &form);
+	void	signForm(AForm &form);
+	void	executeForm(AForm const & form);
 	struct	GradeTooHighException;
 	struct	GradeTooLowException;
 };
