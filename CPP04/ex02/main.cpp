@@ -5,8 +5,6 @@ int main()
 {
 	// AAnimal ola;
 
-	// ola.getType();
-
 	const AAnimal* j = new Dog();
 	const AAnimal* i = new Cat();
 	

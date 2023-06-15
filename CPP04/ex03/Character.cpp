@@ -18,10 +18,9 @@ Character::~Character()
 		delete slots[i];
 }
 
-Character::Character(const Character &copia) : name(copia.name)
+Character::Character(const Character &copia)
 {
-	for (int i = 0; i < 4; i++)
-		*slots[i] = *copia.slots[i];
+	*this = copia;
 }
 
 Character &Character::operator=(const Character &copia)
