@@ -3,10 +3,10 @@
 
 int main()
 {
-	Dog Basic;
-	{
-		Dog temp = Basic;
-	}
+	// Dog Basic;
+	// {
+	// 	Dog temp = Basic;
+	// }
 
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
