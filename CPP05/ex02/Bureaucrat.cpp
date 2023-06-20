@@ -40,12 +40,11 @@ Bureaucrat::Bureaucrat(std::string name_to_give, int grade_to_give) : grade(grad
 
 Bureaucrat::~Bureaucrat() {}
 
-// Bureaucrat &Bureaucrat::operator=(const Bureaucrat &copia)
-// {
-// 	name = copia.getName();
-// 	grade = copia.getGrade();
-// 	return (*this);
-// }
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &copia)
+{
+	grade = copia.getGrade();
+	return (*this);
+}
 
 const std::string Bureaucrat::getName() const
 {
@@ -64,7 +63,7 @@ void	Bureaucrat::increment()
 	grade--;
 }
 
-void	Bureaucrat::decrecement()
+void	Bureaucrat::decrement()
 {
 	if (grade == 150)
 		throw Bureaucrat::GradeTooHighException();

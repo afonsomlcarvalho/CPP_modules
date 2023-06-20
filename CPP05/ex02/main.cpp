@@ -14,8 +14,6 @@ int main()
 	Paulo.signForm(*form2);
 	Paulo.signForm(*form3);
 
-	std::cout << *form1;
-
 	Paulo.executeForm(*form1);
 	Paulo.executeForm(*form2);
 	Paulo.executeForm(*form3);

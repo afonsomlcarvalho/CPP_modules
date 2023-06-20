@@ -64,7 +64,7 @@ void	Bureaucrat::increment()
 	grade--;
 }
 
-void	Bureaucrat::decrecement()
+void	Bureaucrat::decrement()
 {
 	if (grade == 150)
 		throw Bureaucrat::GradeTooHighException();

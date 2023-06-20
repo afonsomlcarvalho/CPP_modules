@@ -23,7 +23,7 @@ public:
 	const std::string getName() const;
 	int	getGrade() const;
 	void	increment();
-	void	decrecement();
+	void	decrement();
 	void	signForm(AForm &form);
 	void	executeForm(AForm const & form);
 	struct	GradeTooHighException;

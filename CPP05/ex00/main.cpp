@@ -4,8 +4,8 @@ int main()
 {
 	try
 	{
-		Bureaucrat Pauleta("Mario", 1);
-		Pauleta.increment();
+		Bureaucrat Pauleta("Pauleta", 1);
+		Pauleta.decrement();
 		std::cout << Pauleta << std::endl;
 	}
 	catch (std::exception &e)

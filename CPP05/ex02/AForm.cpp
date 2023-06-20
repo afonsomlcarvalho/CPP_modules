@@ -47,14 +47,11 @@ AForm::AForm(std::string name_to_give, int sign, int execute) : name(name_to_giv
 
 AForm::~AForm() {}
 
-// AForm &AForm::operator=(const AForm &copia)
-// {
-// 	name = copia.name;
-// 	grade_to_execute = copia.grade_to_execute;
-// 	grade_to_sign = copia.grade_to_sign;
-// 	_signed = copia._signed;
-// 	return (*this);
-// }
+AForm &AForm::operator=(const AForm &copia)
+{
+	_signed = copia._signed;
+	return (*this);
+}
 
 std::string AForm::getName() const
 {

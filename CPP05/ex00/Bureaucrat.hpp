@@ -20,7 +20,7 @@ public:
 	const std::string getName() const;
 	int	getGrade() const;
 	void	increment();
-	void	decrecement();
+	void	decrement();
 	struct	GradeTooHighException;
 	struct	GradeTooLowException;
 };
