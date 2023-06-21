@@ -26,9 +26,9 @@ public:
 	int getGradeToSign() const;
 	int getGradeToExecute() const;
 	void	beSigned(const Bureaucrat &Bur);
-	class	GradeTooHighException;
-	class	GradeTooLowException;
-	class	NotSigned;
+	struct	GradeTooHighException;
+	struct	GradeTooLowException;
+	struct	NotSigned;
 	void execute(Bureaucrat const & executor) const;
 	virtual void formExecution() const = 0;
 };
