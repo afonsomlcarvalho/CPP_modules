@@ -10,6 +10,7 @@ class ScalarConverter
 	static float	f;
 	static char		c;
 	static double	d;
+	static void	display();
 
 public:
 	ScalarConverter();
@@ -17,7 +18,6 @@ public:
 	~ScalarConverter();
 	ScalarConverter &operator=(const ScalarConverter &copia);
 	static void converter(std::string literal);
-	static void	display();
 };
 
 #endif

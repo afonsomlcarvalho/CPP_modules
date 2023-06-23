@@ -12,5 +12,4 @@ int	main(int argc, char **argv)
 	ScalarConverter	scale;
 	
 	scale.converter(input);
-	scale.display();
 }
