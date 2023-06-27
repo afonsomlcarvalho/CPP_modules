@@ -25,6 +25,7 @@ Base *generate()
 		break;
 
 	default:
+		ptr = NULL;
 		break;
 	}
 	return (ptr);
@@ -32,32 +33,48 @@ Base *generate()
 
 void	identify(Base *p)
 {
-	A *a_ptr = dynamic_cast <A *> (p);
-	B *b_ptr = dynamic_cast <B *> (p);
-	C *c_ptr = dynamic_cast <C *> (p);
-
-	if (a_ptr)
+	if (dynamic_cast <A *> (p))
 		std::cout << "Type: A" << std::endl;
-	if (b_ptr)
+	if (dynamic_cast <B *> (p))
 		std::cout << "Type: B" << std::endl;
-	if (c_ptr)
+	if (dynamic_cast <C *> (p))
 		std::cout << "Type: C" << std::endl;
 }
 
 void	identify(Base &p)
 {
-	if (dynamic_cast <A*> (&p))
+	try
+	{
+		(void) dynamic_cast <A&> (p);
 		std::cout << "Type: A" << std::endl;
-	if (dynamic_cast <B *> (&p))
-		std::cout << "Type: B" << std::endl;
-	if (dynamic_cast <C *> (&p))
-		std::cout << "Type: C" << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		try
+		{
+			(void) dynamic_cast <B&> (p);
+			std::cout << "Type: B" << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			try
+			{
+				(void) dynamic_cast <C&> (p);
+				std::cout << "Type: C" << std::endl;
+			}
+			catch(const std::exception& e)
+			{
+				std::cout << "No type identified." << std::endl;
+			}
+			
+		}
+	}
 }
 
 int	main()
 {
 	Base *ptr = generate();
-	Base *c = new A;
+	Base *c = new B;
 	Base &a = *c;
 
 	identify(a);
