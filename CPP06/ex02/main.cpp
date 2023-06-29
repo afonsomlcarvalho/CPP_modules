@@ -77,6 +77,7 @@ int	main()
 	Base *c = new B;
 	Base &a = *c;
 
+	identify(ptr);
 	identify(a);
 
 	delete ptr;

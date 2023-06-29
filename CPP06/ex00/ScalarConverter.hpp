@@ -11,6 +11,10 @@ class ScalarConverter
 	static char		c;
 	static double	d;
 	static void	display();
+	static void convertChar(char ch);
+	static void convertDouble(double db);
+	static void convertInt(int	it);
+	static void convertFloat(float ft);
 
 public:
 	ScalarConverter();
