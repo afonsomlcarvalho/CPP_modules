@@ -2,6 +2,7 @@
 #define ARRAY_HPP
 
 #include <iostream>
+#include <stdlib.h>
 
 template <class T>
 class Array
@@ -20,12 +21,11 @@ public:
 	{
 		array = new T[n];
 		_size = n;
-		for (int i = 0; i < _size; i++)
-			array[i] = n;
 	}
 
 	Array(const Array &copia)
 	{
+		array = new T[copia._size];
 		*this = copia;
 	}
 
@@ -36,6 +36,7 @@ public:
 		_size = copia._size;
 		for (int i = 0; i < _size; i++)
 			array[i] = copia.array[i];
+		return (*this);
 	}
 
 	~Array()
@@ -58,7 +59,8 @@ public:
 
 	T &operator[](int i)
 	{
-		if (i >= _size)
+		
+		if (i >= _size || i < 0)
 			throw Array::OutOfBounds();
 		return (array[i]);
 	}

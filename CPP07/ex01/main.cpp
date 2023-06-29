@@ -1,8 +1,8 @@
 #include "iter.hpp"
 template <class T>
-void	increase(T *i)
+void	increase(T &i)
 {
-	*i += 1;
+	i += 1;
 }
 
 template <class T>

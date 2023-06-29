@@ -1,6 +1,8 @@
 NAME = template
 
-SRCS =	main.cpp		
+SRCS =	main1.cpp		
+
+LIB = Array.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -10,8 +12,8 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(OBJSLIB) $(OBJSPR)
-	@c++ -Wall -Werror -Wextra -std=c++98 $(OBJS) -o $(NAME)
+$(NAME): $(OBJS) $(LIB)
+	@c++ $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	@rm -f $(OBJS)
