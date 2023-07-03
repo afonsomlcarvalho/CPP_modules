@@ -1,8 +1,8 @@
-NAME = template
+NAME = mutantstack
 
-SRCS =	main.cpp		
+SRCS =	main.cpp	
 
-LIB = easyfind.hpp
+LIB = MutantStack.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 

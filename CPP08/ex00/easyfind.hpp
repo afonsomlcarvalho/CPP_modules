@@ -5,14 +5,21 @@
 #include <algorithm>
 #include <iterator>
 
-template <class T>
-T<int>::iterator easyfind(T container, int look)
+struct NotFound : public std::exception
 {
-	T<int>::iterator it;
+	const char * what () const throw () {
+      return "Int not found.";
+   	}
+};
+
+template <class T>
+typename T::iterator easyfind(T container, int look)
+{
+	typename T::iterator it;
 
 	it = std::find(container.begin(), container.end(), look);
 	if (it == container.end())
-		throw std::exception();
+		throw NotFound();
 	return (it);
 }
 

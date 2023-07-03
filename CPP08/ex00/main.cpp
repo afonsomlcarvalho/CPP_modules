@@ -3,12 +3,13 @@
 
 int	main()
 {
-	std::vector<int> ar = { 1, 2, 3, 4, 5 };
+	int ola[] = { 1, 2, 3, 4, 5 };
+	std::vector<int> ar(ola, ola + sizeof(ola) / sizeof(*ola));
 	std::vector<int>::iterator ptr;
 
 	try
 	{
-		easyfind(ar, 3);
+		std::cout << *(easyfind(ar, 3)) << std::endl;
 	}
 	catch(const std::exception& e)
 	{
