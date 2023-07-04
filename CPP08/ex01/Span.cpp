@@ -54,16 +54,8 @@ int	Span::shortestSpan()
 
 	std::vector<int> sorted = _vec;
 	sort(sorted.begin(), sorted.end());
-	std::vector<int>::iterator	it = sorted.begin();
-	int	min = -1;
-
-	while (++it != sorted.end())
-	{
-		if (*it - *(it - 1) < min || min < 0)
-			min = *it - *(it - 1);
-	}
-
-	return (min);
+	adjacent_difference(sorted.begin(), sorted.end(), sorted.begin());
+	return (*(min_element(sorted.begin() + 1, sorted.end())));
 }
 
 int	Span::longestSpan()
